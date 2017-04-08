@@ -25,7 +25,7 @@ require_once('../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->dirroot.'/admin/tool/allornothingconverter/lib.php');
 
-// Page parameters.
+// page parameters
 
 admin_externalpage_setup('toolallornothingconverter');
 
@@ -35,8 +35,8 @@ if ($action == 'run') {
     $output = $converter->run();
 }
 
-// Stating outputing page.
 
+// Header
 echo $OUTPUT->header();
 
 echo $OUTPUT->heading(get_string('converter', 'tool_allornothingconverter'));
@@ -53,8 +53,9 @@ echo $OUTPUT->box(get_string('toconvert', 'tool_allornothingconverter', $toconve
 
 if ($toconvert) {
     echo '<br/><br/>';
-    $buttonurl = new moodle_url('/admin/tool/allornothingconverter/index.php', array('what' => 'run'));
-    echo $OUTPUT->single_button($buttonurl, get_string('run', 'tool_allornothingconverter'));
+    echo $OUTPUT->single_button(new moodle_url('/admin/tool/allornothingconverter/index.php', array('what' => 'run')), get_string('run', 'tool_allornothingconverter'));
 }
 
+// Footer.
 echo $OUTPUT->footer();
+

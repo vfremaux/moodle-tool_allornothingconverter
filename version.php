@@ -26,10 +26,10 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->version  = 2016061600;
-$plugin->requires = 2015111000;
+$plugin->requires = 2014050800;
 $plugin->component = 'tool_allornothingconverter';
 $plugin->maturity = MATURITY_BETA;
-$plugin->release = '3.0.0 (Build 2016061600)';
+$plugin->release = '3.1.0 (Build 2016061600)';
 
-// Non Moodle fields.
-$plugin->codeincrement = '3.0.0001';
+// Non Moodle fields
+$plugin->codeincrement = '3.1.0001';

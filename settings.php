@@ -23,22 +23,16 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
-// Settings default init.
+// settings default init
 if (is_dir($CFG->dirroot.'/local/adminsettings')) {
-
-    // Integration driven code.
+    // Integration driven code 
     require_once($CFG->dirroot.'/local/adminsettings/lib.php');
     list($hasconfig, $hassiteconfig, $capability) = local_adminsettings_access();
 } else {
-
-    // Standard Moodle code.
+    // Standard Moodle code
     $hassiteconfig = $hasconfig = has_capability('moodle/site:config', context_system::instance());
 }
 
 if ($hassiteconfig) {
-    $key = 'toolallornothingconverter';
-    $label = get_string('pluginname', 'tool_allornothingconverter');
-    $pageurl = new moodle_url("/$CFG->admin/tool/allornothingconverter/index.php");
-    $settingspage = new admin_externalpage($key, $label, $pageurl, 'moodle/site:config');
-    $ADMIN->add('qtypesettings', $settingspage);
+    $ADMIN->add('qtypesettings', new admin_externalpage('toolallornothingconverter', get_string('pluginname', 'tool_allornothingconverter'), new moodle_url("/$CFG->admin/tool/allornothingconverter/index.php"), 'moodle/site:config'));
 }
