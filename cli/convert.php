@@ -20,6 +20,7 @@
  * @copyright  2016 Valery Fremaux <valery@edunao.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 define('CLI_SCRIPT', true);
 
 require(dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/config.php');
@@ -34,7 +35,8 @@ if ($unrecognized) {
 }
 
 if ($options['help']) {
-    $help = "Invalidates all Moodle internal caches
+    $help =
+"Invalidates all Moodle internal caches
 
 Options:
 -h, --help            Print out this help
