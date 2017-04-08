@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -26,9 +25,8 @@ namespace tool_allornothingconverter;
 
 class converter {
 
-    function run() {
+    public function run() {
         global $DB;
-
 
         $questions = $DB->get_records('question', array('qtype' => 'allornothing'));
 
@@ -43,7 +41,7 @@ class converter {
         return $output;
     }
 
-    function convert_question($question) {
+    public function convert_question($question) {
         global $DB;
 
         $output = "Converting question ID $question->id\n";
@@ -85,5 +83,4 @@ class converter {
         $output .= "done.\n\n";
         return $output;
     }
-
 }
